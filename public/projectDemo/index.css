@@ -1,0 +1,664 @@
+/*******************************************************************************
+
+	DEFAULT STYLES
+
+*******************************************************************************/
+
+@import url(http://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700&subset=latin,cyrillic);
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	background-color: #fff;
+	overflow-y: scroll;
+}
+
+body, input, select, textarea, button {
+	font-family: Roboto, Tahoma, sans-serif;
+	font-weight: 500;
+	font-size: 13px;
+	color: #000;
+}
+
+div, dl, dt, dd, form {
+	float: left;
+	width: 100%;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+a, .a {
+	color: #000;
+	cursor: pointer;
+	text-decoration: none;
+	border-bottom: 1px solid #ffffff;
+}
+
+.a {
+	border-bottom-style: dotted;
+}
+
+a:hover, .a:hover {
+	border-bottom-width: 0px;
+}
+
+/*******************************************************************************
+
+	LANGUAGES AND CURRENCY
+
+*******************************************************************************/
+
+.selectedLang-ru .en,
+.selectedLang-en .ru,
+.selectedCurrency-usd .uah,
+.selectedCurrency-usd .rub,
+.selectedCurrency-uah .usd,
+.selectedCurrency-uah .rub,
+.selectedCurrency-rub .usd,
+.selectedCurrency-rub .uah {
+	display: none;
+}
+
+/*******************************************************************************
+
+	DEFAULT STYLES
+
+*******************************************************************************/
+
+.hidden {
+	display: none;
+}
+
+.overlay {
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	position: fixed; /*absolute*/
+	background-color: rgba(34,34,34,0.8);
+	z-index: 100;
+}
+
+.popup {
+	top: 50%;
+	left: 50%;
+	z-index: 2;
+	position: absolute;
+	border: 5px solid rgba(32,32,32,0);
+	background-color: rgba(32,32,32,1);
+	/*box-shadow: 0px 0px 10px rgba(0,0,0,0.20);*/
+	box-shadow: 0px 0px 20px rgba(0,0,0,0.80);
+	-moz-box-shadow: 0px 0px 20px rgba(0,0,0,0.80);
+	-webkit-box-shadow: 0px 0px 20px rgba(0,0,0,0.80);
+}
+
+.loading:after {
+	content: "";
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	z-index: 99;
+	background: #222222 no-repeat url(/public/images/loader_gray.gif) 50% 50%;
+	opacity: 0.8;
+}
+
+.bigbutton {
+	display: inline-block;
+	font-size: 24px;
+	font-weight: 100;
+	color: #fff;
+	border: 1px solid #fff;
+	border-radius: 25px;
+	height: 50px;
+	padding: 0px 30px;
+	line-height: 46px;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+/*******************************************************************************
+
+	HEADER
+
+*******************************************************************************/
+
+header {
+	height: 186px;
+	border-top: 20px solid black;
+}
+
+header > section:first-of-type {
+	height: 20px;
+	line-height: 18px;
+	margin-top: -20px;
+	text-align: right;
+	color: #888;
+}
+
+header menu {
+	display: inline-block;
+	padding-left: 38px;
+}
+
+header menu a,
+header menu span {
+	cursor: pointer;
+	margin: 0px 8px;
+}
+
+header menu a,
+header menu .a,
+header menu span:hover,
+header menu span.active {
+	color: #fff;
+}
+
+header .logo,
+header form,
+header address,
+header fieldset,
+header nav {
+	display: block;
+	float: left;
+	width: auto;
+}
+
+header .logo {
+	width: 153px;
+	margin-top: 60px;
+	font-weight: 300;
+	font-size: 50px;
+	line-height: 14px;
+	text-align: center;
+}
+
+header .logo small {
+	font-family: Tahoma;
+	font-size: 10px;
+	letter-spacing: 0.6pt;
+}
+
+header form {
+	width: 363px;
+	height: 32px;
+	border: 1px solid #555;
+	border-radius: 16px;
+	margin: 60px 0px 0px 42px;
+}
+
+header form * {
+	float: left;
+}
+
+header form input[type="reset"],
+header form input[type="submit"] {
+	width: 16px;
+	height: 16px;
+	background: transparent url(images/icoSearch.png) no-repeat 0px 0px;
+	border-width: 0px;
+	margin: 8px;
+	cursor: pointer;
+}
+
+header form input[type="submit"] {
+	background-position: -16px 0px;
+}
+
+header form input[type="text"] {
+	border-width: 0px;
+	width: 299px;
+	height: 32px;
+	line-height: 32px;
+}
+
+header address {
+	width: 191px;
+	font-size: 18px;
+	font-weight: 300;
+	text-align: right;
+	line-height: 30px;
+	margin-top: 45px;
+	font-style: normal;
+}
+
+header fieldset {
+	width: 154px;
+	border-width: 0px;
+	margin: 44px 0px 0px 75px;
+}
+
+header fieldset button {
+	width: 154px;
+	height: 32px;
+	line-height: 28px;
+	border: 1px solid #e699a7;
+	border-radius: 15px;
+	font-size: 14px;
+	cursor: pointer;
+	background: #fff url(images/icoBasket.png) no-repeat 12px 4px;
+	padding-left: 22px;
+}
+
+header fieldset button:hover {
+	background-color: #fed9e8;
+}
+
+header fieldset p {
+	text-align: center;
+	font-size: 12px;
+	margin-top: 4px;
+}
+
+header nav {
+	width: 100%;
+	height: 35px;
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
+	font-size: 14px;
+	margin-top: 44px;
+	text-align: center;
+}
+
+header nav a {
+	display: inline-block;
+	height: 35px;
+	line-height: 35px;
+	text-transform: uppercase;
+	padding: 0px 26px;
+	border-width: 0px;
+	position: relative;
+}
+
+header nav a:hover {
+	height: 35px;
+	background-color: #000;
+	color: #fff;
+}
+
+header nav a:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 1px;
+	height: 22px;
+	top: 6px;
+	right: -1px;
+	background-color: #000;
+}
+
+
+header nav a:hover:after,
+header nav a:last-of-type:after {
+	display: none;
+}
+
+/*******************************************************************************
+
+	FOOTER
+
+*******************************************************************************/
+
+footer {
+	padding-top: 40px;
+}
+
+footer figure {
+	line-height: 25px;
+	padding-right: 68px;
+	float: left;
+	width: auto;
+}
+
+footer figcaption {
+	font-size: 17px;
+	font-weight: 500;
+	margin-bottom: 17px;
+}
+
+footer a {
+	color: #777;
+	font-size: 12px;
+	font-weight: 100;
+	text-decoration: underline;
+}
+
+footer a:hover {
+	text-decoration: none;
+}
+
+footer hr {
+	float: left;
+	display: block;
+	width: 100%;
+	height: 0px;
+	border-width: 1px 0px 0px;
+	border-style: solid;
+	border-color: #bbb;
+	margin: 25px 0px;
+}
+
+footer center {
+	float: left;
+	display: block;
+	width: 100%;
+	height: 35px;
+	font-weight: 100;
+	font-size: 12px;
+}
+
+footer .social {
+	float: right;
+	position: relative;
+	top: 0px;
+	right: 0px;
+	padding-right: 0px;
+}
+
+footer .payments {
+	text-align: center;
+	padding-right: 0px;
+	width: 100%;
+}
+
+footer .icoPhone {
+	font-size: 16px;
+	font-weight: 300;
+}
+
+footer .icoMail {
+	font-size: 14px;
+	font-weight: 300;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+footer .icoMail:before,
+footer .icoPhone:before {
+	content: "";
+	display: block;
+	position: absolute;
+	width: 12px;
+	height: 12px;
+	margin-left: -20px;
+	margin-top: 6px;
+	background: url(images/icoFooter.gif) no-repeat 0px 0px;
+}
+footer .icoMail:before {
+	background-position: -12px 0px;
+}
+
+/*******************************************************************************
+
+	CONTENT
+
+*******************************************************************************/
+
+footer,
+section {
+	width: 980px;
+	float: left;
+	position: relative;
+	left: 50%;
+	margin-left: -490px;
+	clear: both;
+}
+
+/*******************************************************************************
+
+	BANNERS
+
+*******************************************************************************/
+
+.bigboard {
+	height: 420px;
+	overflow: hidden;
+	position: relative;
+}
+
+.bigboard ul {
+	list-style-type: none;
+	margin-top: 393px;
+	width: 100%;
+	text-align: center;
+	position: absolute;
+	cursor: default;
+}
+
+.bigboard li {
+	display: inline-block;
+	width: 13px;
+	height: 13px;
+	border: 1px solid #000;
+	border-radius: 50%;
+	margin: 0px 4px;
+	cursor: pointer;
+}
+
+.bigboard li.active {
+	background-color: #fff;
+}
+
+/*******************************************************************************
+
+	INFORMATION
+
+*******************************************************************************/
+
+.information {
+	margin-top: 62px;
+}
+
+.information a {
+	width: 317px;
+	height: 198px;
+	display: block;
+	float: left;
+	background: url(/public/images/banners/info.jpg) no-repeat 0px 0px;
+}
+
+.information a.infDelivery {
+	background-position: -317px 0px;
+	margin-left: 14px;
+}
+
+.information a.infSocial {
+	background-position: -634px 0px;
+	margin-left: 14px;
+}
+
+.information a.infDiscount:hover {
+	background-position: 0px -198px;
+}
+
+.information a.infDelivery:hover  {
+	background-position: -317px -198px;
+}
+
+.information a.infSocial:hover  {
+	background-position: -634px -198px;
+}
+
+/*******************************************************************************
+
+	SLIDER
+
+*******************************************************************************/
+
+.slider {
+	position: relative;
+}
+
+.slider > div {
+	width: 980px;
+	height: 320px;
+	margin-top: 40px;
+	overflow: hidden;
+}
+
+.slider > div > div {
+	width: 10000px;
+}
+
+.slider h1 {
+	font-weight: 300;
+	font-size: 48px;
+	text-align: center;
+	float: left;
+	width: 100%;
+	margin-top: 45px;
+}
+
+.slider .prev,
+.slider .next {
+	width: 12px;
+	height: 44px;
+	border-width: 0px;
+	background: transparent url(images/icoSlider.png) no-repeat 0px 0px;
+	cursor: pointer;
+	position: absolute; 
+	top: 244px;
+}
+
+.slider .prev {
+	left: -28px;
+}
+
+.slider .next {
+	background-position: -12px 0px;
+	right: -28px;
+}
+
+.slider article {
+	display: block;
+	float: left;
+	width: 170px;
+	padding-right: 34px;
+}
+
+.slider article span {
+	padding-top: 10px;
+	text-align: center;
+	width: 100%;
+	display: block;
+	border-width: 0px;
+	text-decoration: underline;
+}
+
+.slider article p {
+	text-align: center;
+	padding-top: 6px;
+	font-size: 16px;
+	font-weight: 700;
+}
+
+/*******************************************************************************
+
+	SUBSCRIBE
+
+*******************************************************************************/
+
+.subscribe {
+	width: 980px;
+	height: 180px;
+	background: url(/public/images/banners/subscribe.jpg) no-repeat;
+	color: #fff;
+}
+
+.subscribe h2 {
+	font-weight: 300;
+	font-size: 30px;
+	text-align: center;
+	float: left;
+	width: 100%;
+	margin-top: 42px;
+	line-height: 22px;
+}
+
+.subscribe form {
+	margin-top: 34px;
+}
+
+.subscribe label {
+	font-size: 18px;
+	display: block;
+	float: left;
+	font-weight: 300;
+	width: 279px;
+	padding: 0px 20px;
+}
+
+.subscribe input[type="text"] {
+	display: block;
+	float: left;
+	width: 165px;
+	height: 30px;
+	line-height: 30px;
+	padding: 0px 17px;
+	border: 1px solid #fff;
+	border-radius: 15px;
+	margin-right: 32px;
+	background-color: transparent;
+	color: #fff;
+}
+
+.subscribe input[type="submit"] {
+	display: block;
+	float: left;
+	width: 142px;
+	height: 30px;
+	line-height: 26px;
+	border: 1px solid #d44f68;
+	border-radius: 15px;
+	color: #fff;
+	background-color: rgba(212, 79, 104, 0.36);
+	font-size: 16px;
+	font-weight: 300;
+	cursor: pointer;
+}
+
+/*******************************************************************************
+
+	PARTNERS
+
+*******************************************************************************/
+
+.partners {
+	width: 980px;
+	height: 244px;
+	background: url(/public/images/banners/partners.jpg) no-repeat;
+	color: #fff;
+}
+
+.partners h2 {
+	font-weight: 500;
+	font-size: 36px;
+	text-align: center;
+}
+
+.partners h1 {
+	font-weight: 100;
+	font-size: 36px;
+	text-align: center;
+}
+
+.partners h3 {
+	font-weight: 100;
+	font-size: 24px;
+	text-align: center;
+	margin-top: 10px;
+}
+
+.partners big {
+	font-size: 60px;
+}
+
+.partners .bigbutton {
+	margin-left: 34px;
+}
